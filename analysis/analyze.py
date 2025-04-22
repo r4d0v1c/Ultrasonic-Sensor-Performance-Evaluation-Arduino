@@ -5,14 +5,22 @@ import time
 arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
 
 def read_data():
-    data = arduino.readline().decode('utf-8').strip()
-    return data
+    try:
+        data = arduino.readline().decode('utf-8', errors='ignore').strip()
+        return data
+    except UnicodeDecodeError as e:
+        print(f"Decoding error: {e}")
+        return ""
 
 def main():
     while True:
         data = read_data()
         if data:
-            print(f"Received data: {data}")
+            try:
+                distance, time_value = data.split(',')
+                print(f"Distance: {distance} cm, Time: {time_value} µs")
+            except ValueError:
+                print(f"Invalid data format: {data}")
         time.sleep(1)
 
 if __name__ == "__main__":
