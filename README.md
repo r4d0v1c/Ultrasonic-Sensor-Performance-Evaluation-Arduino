@@ -39,4 +39,4 @@ Ultrasonic-Sensor-Performance-Evaluation-Arduino/
 ├── plots/                 # Visualized results (graphs, charts)
 ├── docs/                  # Experiment methodology and technical notes
 ├── README.md              # Project overview and documentation
-└── LICENSE                # License (e.g., MIT)
+└── LICENSE                # License (MIT)
