@@ -5,9 +5,12 @@
 #define SOUND_SPEED 0.0343 // Speed of sound in cm/us
 #define DELAY_BETWEEN_MEASUREMENTS 1000 // Delay in milliseconds
 
+long duration;
+
 void initializePins() {
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
+  duration = 0;
 }
 
 void triggerUltrasonicPulse() {
@@ -19,7 +22,7 @@ void triggerUltrasonicPulse() {
 }
 
 long measureDistance() {
-  long duration = pulseIn(ECHO_PIN, HIGH);
+  duration = pulseIn(ECHO_PIN, HIGH);
   return (duration / 2) * SOUND_SPEED;
 }
 
@@ -32,10 +35,8 @@ void setup() {
 void loop() {
   triggerUltrasonicPulse();
   long distance = measureDistance();
-
-  Serial.print("Distance: ");
   Serial.print(distance);
-  Serial.println(" cm");
-
+  Serial.print(',');
+  Serial.println(duration);
   delay(DELAY_BETWEEN_MEASUREMENTS);
 }
