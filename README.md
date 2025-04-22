@@ -33,7 +33,7 @@ The goal is to provide a quantitative analysis of the sensor's behavior through 
 ```plaintext
 Ultrasonic-Sensor-Performance-Evaluation-Arduino/
 │
-├── code/                  # Arduino sketch for data collection
+├── code/                  # PlatformIO project for data collection
 ├── data/                  # Raw and processed measurement data
 ├── analysis/              # Python scripts for analysis and plotting
 ├── plots/                 # Visualized results (graphs, charts)
