@@ -38,7 +38,7 @@ def plot_data(filename):
 
     plt.figure(figsize=(10, 6))
     scatter = plt.scatter(times, distances, c=distances, cmap='viridis', edgecolor='k', s=100)
-    plt.axhline(y=15, color='r', linestyle='--', label='Actual Distance (15 cm)')
+    plt.axhline(y=100, color='r', linestyle='--', label='Actual Distance (100 cm)')
     plt.colorbar(scatter, label='Distance (cm)')
     plt.xlabel('Time (µs)', fontsize=12)
     plt.ylabel('Distance (cm)', fontsize=12)
@@ -48,7 +48,7 @@ def plot_data(filename):
     plt.tight_layout()
 
     # Save the plot
-    output_path = "../plots/overview/avg_response_vs_dist_15cm.png"
+    output_path = "../plots/overview/avg_response_vs_dist_100cm.png"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
     plt.close()
@@ -72,7 +72,7 @@ def plot_response_time_histogram(filename):
     plt.title('Response Time Histogram', fontsize=14)
     plt.grid(visible=True, linestyle='--', alpha=0.7)
 
-    output_path = "../plots/latency/response_time_histogram_15cm.png"
+    output_path = "../plots/latency/response_time_histogram_100cm.png"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
     plt.close()
@@ -98,7 +98,7 @@ def plot_response_time_by_distance(filename):
     plt.title('Response Time by Distance', fontsize=14)
     plt.grid(visible=True, linestyle='--', alpha=0.7)
 
-    output_path = "../plots/latency/response_time_by_distance_15cm.png"
+    output_path = "../plots/latency/response_time_by_distance_100cm.png"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
     plt.close()
@@ -119,14 +119,14 @@ def plot_histogram_per_distance(filename):
     plt.hist(times, bins=15, color='orange', edgecolor='black', alpha=0.7)
     plt.xlabel('Response Time (µs)', fontsize=12)
     plt.ylabel('Frequency', fontsize=12)
-    plt.title('Response Time Histogram (15 cm)', fontsize=14)
+    plt.title('Response Time Histogram (100 cm)', fontsize=14)
     plt.grid(visible=True, linestyle='--', alpha=0.7)
 
-    output_path = "../plots/per_distance/15cm_hist_response.png"
+    output_path = "../plots/per_distance/100cm_hist_response.png"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
     plt.close()
-    print(f"15 cm response time histogram saved at {output_path}")
+    print(f"25 cm response time histogram saved at {output_path}")
 
 def plot_time_series_per_distance(filename):
     times = []
@@ -143,18 +143,18 @@ def plot_time_series_per_distance(filename):
     plt.plot(range(len(times)), times, marker='o', linestyle='-', color='purple')
     plt.xlabel('Measurement Index', fontsize=12)
     plt.ylabel('Response Time (µs)', fontsize=12)
-    plt.title('Response Time Time Series (15 cm)', fontsize=14)
+    plt.title('Response Time Time Series (100 cm)', fontsize=14)
     plt.grid(visible=True, linestyle='--', alpha=0.7)
 
-    output_path = "../plots/per_distance/15cm_time_series.png"
+    output_path = "../plots/per_distance/100cm_time_series.png"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
     plt.close()
-    print(f"15 cm response time time series saved at {output_path}")
+    print(f"25 cm response time time series saved at {output_path}")
 
 def main():
     global cnt  # Declare cnt as global
-    csv_file = "../data/15cm.csv"
+    csv_file = "../data/100cm.csv"
     current_temperature = 23  # Current temperature in °C
     with open(csv_file, mode='w', newline='') as file:
         writer = csv.writer(file)
