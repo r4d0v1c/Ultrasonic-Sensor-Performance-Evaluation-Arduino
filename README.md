@@ -10,11 +10,11 @@ The goal is to provide a quantitative analysis of the sensor's behavior through 
 
 ##  Objectives
 
-- ✅ Measure the sensor's accuracy at different distances  
-- ✅ Evaluate response time and latency  
-- ✅ Analyze measurement consistency and variability (e.g., standard deviation)  
-- ✅ Visualize data through plots and statistical summaries  
-- ✅ Document methodology and findings in a structured way
+-  Measure the sensor's accuracy at different distances  
+-  Evaluate response time and latency  
+-  Analyze measurement consistency and variability (e.g., standard deviation)  
+-  Visualize data through plots and statistical summaries  
+-  Document methodology and findings in a structured way
 
 ---
 
