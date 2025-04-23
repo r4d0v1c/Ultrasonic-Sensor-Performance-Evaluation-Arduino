@@ -2,7 +2,8 @@
 
 #define TRIG_PIN 9
 #define ECHO_PIN 10
-#define SOUND_SPEED 0.0343 // Speed of sound in cm/us
+#define TEMP 23
+#define SOUND_SPEED (331.3 + 0.606 * TEMP) / 10000 // Speed of sound in cm/us
 #define DELAY_BETWEEN_MEASUREMENTS 1000 // Delay in milliseconds
 
 long duration;
